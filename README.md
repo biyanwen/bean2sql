@@ -78,5 +78,6 @@ ArrayList<Student> students=Lists.newArrayList(new Student(15,"小明","天河�
 		Assertions.assertEquals("INSERT ALL INTO STUDENT (ADDRESS,NAME,AGE)VALUES ('天河区','小明','15') INTO STUDENT (ADDRESS,NAME,AGE)VALUES ('荔湾区','小红','18') SELECT 1 FROM dual;",dmBatchInsertSql);
 
 ~~~
+ps: 本工具是通过先将 JavaBean 序列化成 json 后再将其转换成 sql 的，所以你可以直接将 com.fasterxml.jackson.databind.ObjectMapper 当做参数传进入，以改变序列化的行为，例如你想自定义【枚举】的转换规则等等。
 
 更多示例可以查看本工具的测试类
